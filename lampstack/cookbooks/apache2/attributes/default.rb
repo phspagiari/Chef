@@ -18,6 +18,7 @@
 #
 
 set[:apache][:root_group]  = "root"
+set[:apache][:apache_group] = "www-data"
 
 # Where the various parts of apache are
 case platform
@@ -133,7 +134,7 @@ default[:apache][:worker][:maxrequestsperchild] = 0
 
 default['apache']['default_modules'] = %w{
   status alias auth_basic authn_file authz_default authz_groupfile authz_host authz_user autoindex
-  dir env mime negotiation setenvif
+  dir env mime negotiation setenvif php5
 }
 
 default['apache']['default_modules'] << "log_config" if ["redhat", "centos", "scientific", "fedora", "suse", "arch", "freebsd"].include?(node.platform)

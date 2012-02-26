@@ -29,3 +29,10 @@ end
 php_pear_channel 'pecl.php.net' do
   action :update
 end
+
+cookbook_file "/var/www/phpinfo.php" do
+  source "phpinfo.php"
+  mode 0755
+  owner "www-data"
+  group node[:apache][:apache_group]
+end

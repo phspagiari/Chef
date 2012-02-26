@@ -211,7 +211,7 @@ node['apache']['default_modules'].each do |mod|
 end
 
 apache_site "default" if platform?("redhat", "centos", "scientific", "fedora")
-
+  
 service "apache2" do
   action :start
 end
