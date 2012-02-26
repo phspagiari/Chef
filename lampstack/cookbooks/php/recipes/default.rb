@@ -20,6 +20,10 @@
 #
 
 include_recipe "php::package"
+include_recipe "php::module_mysql"
+include_recipe "php::module_apc"
+include_recipe "php::module_curl"
+include_recipe "php::module_gd"
 
 # update the main channels
 php_pear_channel 'pear.php.net' do

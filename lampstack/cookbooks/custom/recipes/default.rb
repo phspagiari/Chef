@@ -18,3 +18,14 @@ execute "test" do
   command "/usr/local/bin/test.sh"
   action :run
 end
+
+service 'apache2' do
+  supports [:status]
+  action :restart
+end
+
+directory node[:custom][:dirtest] do
+  owner "root"
+  mode "0755"
+  action :create
+end
